@@ -12,3 +12,34 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+model Painting {
+  id         String      @id @default(cuid())
+  title      String
+  description String?
+  size       String
+  year       Int
+  colors     Color[]
+  techniques Technique[]
+  images     Image[]
+}
+
+model Image {
+  id         String   @id @default(cuid())
+  url        String   
+  paintingId String
+  painting   Painting @relation(fields: [paintingId], references: [id], onDelete: Cascade)
+}
+
+model Color {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  paintings Painting[]
+}
+
+model Technique {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  paintings Painting[]
+}
