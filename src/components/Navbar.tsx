@@ -2,9 +2,12 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState('/');
+
+  const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,8 +19,6 @@ export default function Navbar() {
       }
     };
 
-    // Set active link based on current path
-    setActiveLink(window.location.pathname);
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,10 +26,10 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
+      scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 py-5'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="font-bold text-xl text-gray-800">JoPF Art Studio</div>
+        <div className="font-serif font-bold text-2xl text-navy">JoPF Art Studio</div>
 
         <ul className="flex space-x-8">
           {[
@@ -39,11 +40,10 @@ export default function Navbar() {
           ].map((link) => (
             <li key={link.name}>
               <Link href={link.path}>
-                <span
-                  className={`text-sm font-medium cursor-pointer transition-colors duration-200 ${
-                    activeLink === link.path
-                      ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
-                      : 'text-gray-600 hover:text-blue-500'
+                <span className={`text-sm font-medium cursor-pointer transition-colors duration-200 ${
+                    pathname === link.path
+                      ? 'text-[#c06d59] border-b-2 border-gold pb-1'
+                      : 'text-charcoal hover:text-blue-500'
                   }`}
                 >
                   {link.name}
