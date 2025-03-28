@@ -30,12 +30,11 @@ export default function Navbar() {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="font-serif font-bold text-2xl text-navy">JoPF Art Studio</div>
-
         <ul className="flex space-x-8">
           {[
-            { name: 'Home', path: '/' },
+            // { name: 'Home', path: '/' },
             { name: 'Gallery', path: '/paintings' },
-            { name: 'About', path: '/about' },
+            // { name: 'About', path: '/about' },
             { name: 'Contact', path: '/contact' }
           ].map((link) => (
             <li key={link.name}>
@@ -53,6 +52,9 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
+      <span className="text-sm pl-10 text-red-900">
+      This is a temporary but fully functional version of the site. Feel free to use the contact form and navigate without any issues!
+      </span>
     </nav>
   );
 }
