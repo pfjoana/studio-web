@@ -23,6 +23,7 @@ model Painting {
 model Image {
   id         String   @id @default(cuid())
   url        String
+  publicId   String
   paintingId String
   painting   Painting @relation(fields: [paintingId], references: [id], onDelete: Cascade)
 }
