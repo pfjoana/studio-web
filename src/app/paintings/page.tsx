@@ -8,13 +8,13 @@ export default async function PaintingsPage() {
   const paintings = await prisma.painting.findMany({
     include: {
       images: {
-        take: 1, // Only take the first image for the grid view
+        take: 1,
       },
       colors: true,
       techniques: true,
     },
     orderBy: {
-      year: 'desc', // Show newest paintings first
+      year: 'desc',
     },
   })
 

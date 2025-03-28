@@ -3,12 +3,13 @@ import { notFound } from 'next/navigation'
 import PaintingDetail from '@/src/components/PaintingDetail'
 
 interface PaintingPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default async function PaintingPage({ params }: PaintingPageProps) {
+export default async function PaintingPage(props: PaintingPageProps) {
+  const params = await props.params;
 
   const painting = await prisma.painting.findUnique({
     where: {
