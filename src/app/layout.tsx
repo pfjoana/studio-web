@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
 // Load fonts
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -32,7 +31,9 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${raleway.variable}`}>
       <body className="font-sans text-charcoal bg-stone min-h-screen">
         <Navbar/>
-        <main className="pt-20">{children}</main>
+        <main className="pt-20">
+          {children}
+        </main>
         <Footer/>
       </body>
     </html>

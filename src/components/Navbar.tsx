@@ -52,9 +52,9 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <span className="text-sm pl-10 text-red-900">
+      {/* <span className="text-sm pl-10 text-red-900">
       This is a temporary but fully functional version of the site. Feel free to use the contact form and navigate without any issues!
-      </span>
+      </span> */}
     </nav>
   );
 }
