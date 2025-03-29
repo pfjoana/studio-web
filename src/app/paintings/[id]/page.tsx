@@ -22,16 +22,13 @@ export default async function PaintingPage(props: PaintingPageProps) {
     },
   })
 
-  // If painting not found, render the 404 page
   if (!painting) {
     notFound()
   }
+
   return <PaintingDetail painting={painting} />
 }
 
-// Generate static params for paintings at build time
-// prepares the list of painting IDs so Next can generate static pages for each painting
-//avoid fetching at runtime
 export async function generateStaticParams() {
   const paintings = await prisma.painting.findMany({
     select: { id: true },

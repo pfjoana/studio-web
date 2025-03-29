@@ -16,25 +16,29 @@ async function main() {
     prisma.color.create({ data: { name: 'Purple' } }),
     prisma.color.create({ data: { name: 'Black' } }),
     prisma.color.create({ data: { name: 'White' } }),
+    prisma.color.create({ data: { name: 'Neutral' } }),
+    prisma.color.create({ data: { name: 'Terracotta' } }),
   ])
 
   const techniques = await Promise.all([
-    prisma.technique.create({ data: { name: 'Acrylic' } }),
+    prisma.technique.create({ data: { name: 'Acrylic on canvas' } }),
+    prisma.technique.create({ data: { name: 'Mixed Media on woodboard' } }),
+    prisma.technique.create({ data: { name: 'Mixed Media on canvas' } }),
     prisma.technique.create({ data: { name: 'Watercolor' } }),
-    prisma.technique.create({ data: { name: 'Mixed Media' } }),
+
   ])
 
   const painting1 = await prisma.painting.create({
     data: {
-      title: 'Sunset Over Mountains',
-      description: 'A vibrant depiction of a sunset over a mountain range, with rich colors and bold strokes.',
-      size: '24x36 inches',
+      title: 'Emotions',
+      description: '',
+      size: '60 x 80 cm',
       year: 2023,
       colors: {
         connect: [
-          { id: colors[0].id },
-          { id: colors[2].id },
+          { id: colors[4].id },
           { id: colors[3].id },
+          { id: colors[2].id },
         ]
       },
       techniques: {
@@ -45,12 +49,12 @@ async function main() {
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330619/samples/landscapes/nature-mountains.jpg',
-            publicId: 'samples/landscapes/nature-mountains'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158831/paintings/showcase_emotions.jpg',
+            publicId: 'paintings/showcase_emotions'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330615/samples/landscapes/beach-boat.jpg',
-            publicId: 'samples/landscapes/beach-boat'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158829/paintings/showcase_emotions2.jpg',
+            publicId: 'paintings/showcase_emotions2'
           }
         ]
       }
@@ -59,32 +63,30 @@ async function main() {
 
   const painting2 = await prisma.painting.create({
     data: {
-      title: 'Ocean Dreams',
-      description: 'An abstract representation of ocean waves, capturing the movement and energy of the sea.',
-      size: '30x40 inches',
+      title: 'Divergências',
+      description: '',
+      size: '30 x 40 cm',
       year: 2022,
       colors: {
         connect: [
           { id: colors[1].id },
-          { id: colors[6].id },
-          { id: colors[4].id },
+          { id: colors[6].id }
         ]
       },
       techniques: {
         connect: [
-          { id: techniques[1].id },
-          { id: techniques[2].id },
+          { id: techniques[0].id }
         ]
       },
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330619/samples/landscapes/nature-mountains.jpg',
-            publicId: 'samples/landscapes/nature-mountains'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158832/paintings/showcase_divergencias.jpg',
+            publicId: 'paintings/showcase_divergencias'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330615/samples/landscapes/beach-boat.jpg',
-            publicId: 'samples/landscapes/beach-boat'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158831/paintings/showcase_divergencias2.jpg',
+            publicId: 'paintings/showcase_divergencias2'
           }
         ]
       }
@@ -93,36 +95,78 @@ async function main() {
 
   const painting3 = await prisma.painting.create({
     data: {
-      title: 'Urban Jungle',
-      description: 'A cityscape blending natural elements with urban architecture, exploring the coexistence of nature and city life.',
-      size: '18x24 inches',
+      title: 'Red Planet',
+      description: '',
+      size: '100 cm diameter',
       year: 2024,
       colors: {
         connect: [
-          { id: colors[3].id },
-          { id: colors[5].id },
+          { id: colors[7].id },
+          { id: colors[8].id },
           { id: colors[0].id },
         ]
       },
       techniques: {
         connect: [
-          { id: techniques[2].id },
+          { id: techniques[1].id },
         ]
       },
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330619/samples/landscapes/nature-mountains.jpg',
-            publicId: 'samples/landscapes/nature-mountains'
-          },
-          {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1700330615/samples/landscapes/beach-boat.jpg',
-            publicId: 'samples/landscapes/beach-boat'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178615/paintings/showcase_redPlanet.jpg',
+            publicId: 'paintings/showcase_redPlanet'
           }
         ]
       }
     }
   })
+
+  const painting4 = await prisma.painting.create({
+    data: {
+      title: 'Além do Espelho',
+      description: '',
+      size: '62 x 84 cm',
+      year: 2024,
+      colors: {
+        connect: [
+          { id: colors[1].id },
+          { id: colors[6].id },
+        ]
+      },
+      techniques: {
+        connect: [
+          { id: techniques[1].id },
+        ]
+      },
+      images: {
+        create: [
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178697/paintings/showcase_AlemEspelho.jpg',
+            publicId: 'paintings/showcase_AlemEspelho'
+          },
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178689/paintings/detail_AlemEspelho.jpg',
+            publicId: 'paintings/detail_AlemEspelho'
+          },
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho2.jpg',
+            publicId: 'paintings/detail_AlemEspelho2'
+          },
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho3.jpg',
+            publicId: 'paintings/detail_AlemEspelho3'
+          },
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho4.jpg',
+            publicId: 'paintings/detail_AlemEspelho4'
+          }
+
+        ]
+      }
+    }
+  })
+
 
 
   console.log('Database has been seeded!')
