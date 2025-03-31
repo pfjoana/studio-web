@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import { Playfair_Display, Raleway } from 'next/font/google'
-import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import "./globals.css"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import { Toaster } from "@/src/components/ui/toaster"
 
 // Load fonts
 const playfair = Playfair_Display({
@@ -34,6 +35,7 @@ export default function RootLayout({
         <main className="pt-20">
           {children}
         </main>
+        <Toaster />
         <Footer/>
       </body>
     </html>
