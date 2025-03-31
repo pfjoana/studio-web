@@ -53,22 +53,21 @@ export default function PaintingDetail({ painting }: { painting: Painting }) {
         publicId: image.publicId,
         mediaType: 'image',
         transformation: [
-          // Base transformation
           {
-            width: 800,    // Adjusted for two-thirds of typical screen width
-            height: 600,   // Maintain aspect ratio
+            width: 800,
+            height: 600,
             crop: 'fit',
             quality: 'auto:good',
             fetch_format: 'auto'
           },
           {
-            width: 400,   // Smaller version for smaller screens
+            width: 400,
             crop: 'fit',
             quality: 'auto:good',
             fetch_format: 'auto'
           },
           {
-            width: 1200,  // Larger version for high-resolution displays
+            width: 1200,
             crop: 'fit',
             quality: 'auto:good',
             fetch_format: 'auto'
@@ -76,8 +75,8 @@ export default function PaintingDetail({ painting }: { painting: Painting }) {
         ]
       })),
       aspectRatio: '4:3',
-      bgColor: '#f5f5f0',
-      carouselLocation: 'bottom',
+      bgColor: '#f5efe9',
+      carouselLocation: 'left',
       carouselOffset: 10,
       navigation: 'always',
       // preload: ['image'],
