@@ -25,11 +25,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 py-5'
-    }`}>
+    <nav className={'fixed top-0 w-full z-50 bg-white shadow-md py-4'}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="font-serif font-bold text-2xl text-navy">JoPF Art Studio</div>
+        <div className="font-marcellus text-2xl text-navy">JoPF Art Studio</div>
         <ul className="flex space-x-8">
           {[
             // { name: 'Home', path: '/' },
@@ -39,7 +37,7 @@ export default function Navbar() {
           ].map((link) => (
             <li key={link.name}>
               <Link href={link.path}>
-                <span className={`text-sm font-medium cursor-pointer transition-colors duration-200 ${
+                <span className={`text-xl font-marcellus font-medium cursor-pointer transition-colors duration-200 ${
                     pathname === link.path
                       ? 'text-[#c06d59] border-b-2 border-gold pb-1'
                       : 'text-charcoal hover:text-blue-500'

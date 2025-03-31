@@ -22,7 +22,7 @@ export default async function PaintingsPage() {
   return (
     <div className="container mx-auto py-16 px-4">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-navy mb-4">Art Gallery</h1>
+        <h1 className="heading">Art Gallery</h1>
         <p className="text-charcoal max-w-2xl mx-auto">
           Explore our curated collection of artworks in a variety of styles and techniques.
         </p>
@@ -40,7 +40,6 @@ export default async function PaintingsPage() {
                 <Image
                   src={painting.images[0].url}
                   alt={painting.title}
-                  // placeholder="blur"
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -52,45 +51,33 @@ export default async function PaintingsPage() {
               )}
             </div>
 
-            <div className="p-5 bg-white">
-              <h2 className="text-xl font-serif text-navy">{painting.title}</h2>
-              <p className="text-charcoal/80 mt-1">{painting.size}, {painting.year}</p>
+            <div className="p-5 pt-3 bg-white">
+              <h2 className="text-xl font-serif underline text-medium text-navy">{painting.title}</h2>
+              <p className="text-sm text-charcoal mt-1">{painting.year}</p>
+              <p className="text-sm  text-charcoal mt-1">{painting.size} </p>
 
-              {/* Display up to 3 colors */}
-              {painting.colors.length > 0 && (
-                <div className="flex flex-wrap gap-1 mt-3">
-                  {painting.colors.slice(0, 3).map((color) => (
-                    <span key={color.id} className="text-xs bg-white px-2 py-1 rounded text-charcoal">
-                      {color.name}
-                    </span>
-                  ))}
-                  {painting.colors.length > 3 && (
-                    <span className="text-xs bg-gray-100 px-2 py-1 rounded text-charcoal">
-                      +{painting.colors.length - 3} more
-                    </span>
-                  )}
-                </div>
-              )}
 
-              {/* Display up to 2 techniques */}
-              {painting.techniques.length > 0 && (
                 <div className="flex flex-wrap gap-1 mt-2">
                   {painting.techniques.slice(0, 2).map((technique) => (
-                    <span key={technique.id} className="text-xs text-terracotta italic">
+                    <span key={technique.id} className="text-sm font-medium text-navy italic">
                       {technique.name}
                     </span>
                   ))}
-                  {painting.techniques.length > 2 && (
-                    <span className="text-xs text-terracotta italic">
-                      +{painting.techniques.length - 2} more
-                    </span>
-                  )}
                 </div>
-              )}
 
-              <div className="mt-3 inline-block border-b border-gold pb-1 text-sm font-medium text-navy transition-colors group-hover:border-terracotta group-hover:text-terracotta">
-                View details
-              </div>
+                <div className="flex flex-wrap gap-1 mt-3">
+                  {painting.colors.slice(0, 3).map((color) => (
+                    <span key={color.id} className="text-sm bg-stone px-2 mx-1 py-1 rounded text-charcoal">
+                      {color.name}
+                    </span>
+                  ))}
+                </div>
+
+              {/* <div className="flex justify-end mt-3">
+                <div className="inline-block border-b border-gold pb-1 text-sm font-medium text-navy transition-colors group-hover:border-terracotta group-hover:text-terracotta ml-auto">
+                  View details
+                </div>
+              </div> */}
             </div>
           </Link>
         ))}

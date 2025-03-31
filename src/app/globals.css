@@ -22,6 +22,10 @@ body {
 
 
 @layer utilities {
+
+  .heading {
+    @apply text-4xl md:text-5xl font-marcellus text-navy mb-4
+  }
   .contacts-link {
     @apply flex items-center space-x-2 text-navy hover:text-terracotta transition-colors
   }
@@ -36,6 +40,10 @@ body {
 
   .form-button {
     @apply w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium
+  }
+
+  .painting-details {
+    @apply font-bold text-navy
   }
 
 }

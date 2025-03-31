@@ -37,7 +37,7 @@ const ContactPage = () => {
     <div className="container mx-auto py-16 px-4">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-serif text-center font-bold text-navy mb-10">Contacts</h1>
+          <h1 className="heading text-center mb-10">Contacts</h1>
           <p className="text-charcoal  text-lg leading-relaxed max-w-2xl mr-4 ml-10">
             For questions about artworks featured in the gallery or to discuss personalized commissions, feel free to send a message.
             <br />Your vision and curiosity are always welcome.
