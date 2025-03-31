@@ -10,6 +10,7 @@ body {
   background-color: #f5f5f0;
 }
 
+
 .toast-success {
   background-color: #4caf50 !important;
   color: #f5f5f0 !important;
@@ -18,6 +19,27 @@ body {
   background-color: #f44336 !important;
   color: #f5f5f0 !important;
 }
+
+
+@layer utilities {
+  .contacts-link {
+    @apply flex items-center space-x-2 text-navy hover:text-terracotta transition-colors
+  }
+
+  .form-label {
+    @apply block text-navy font-medium mb-2
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 border border-navy/20 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta/50
+  }
+
+  .form-button {
+    @apply w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium
+  }
+
+}
+
 
 
 

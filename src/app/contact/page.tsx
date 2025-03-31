@@ -47,18 +47,22 @@ const ContactPage = () => {
           <div className="flex space-x-6 items-center ml-10">
             <Link
               href="mailto:jopfstudio@gmail.com"
-              className="flex items-center space-x-2 text-navy hover:text-terracotta transition-colors"
+              className="contacts-link"
               >
-              <Mail className="w-6 h-6" />
+              <div className="flex items-center justify-center rounded-full bg-navy">
+                <Mail className="w-5 h-5 m-1.5 text-gray-200" />
+              </div>
               <span className="font-medium">jopfstudio@gmail.com</span>
             </Link>
 
             <Link
               href="https://www.instagram.com/jopf_art/"
               target="_blank"
-              className="flex items-center space-x-2 text-navy hover:text-terracotta transition-colors"
+              className="contacts-link"
             >
-              <Instagram className="w-6 h-6" />
+              <div className="flex items-center justify-center rounded-full bg-navy">
+                <Instagram className="w-5 h-5 m-1.5 text-gray-200" />
+              </div>
               <span className="font-medium">jopf_art</span>
             </Link>
           </div>
@@ -70,41 +74,41 @@ const ContactPage = () => {
             className="space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-navy font-medium mb-2">Name</label>
+              <label htmlFor="name" className="form-label">Name</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-2 border border-navy/20 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta/50"
+                className="form-input"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-navy font-medium mb-2">Email</label>
+              <label htmlFor="email" className="form-label">Email</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-2 border border-navy/20 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta/50"
+                className="form-input"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-navy font-medium mb-2">Message</label>
+              <label htmlFor="message" className="form-label">Message</label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows={5}
-                className="w-full px-4 py-2 border border-navy/20 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta/50"
+                className="form-input"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium"
+              className="form-button"
             >
               Send Message
             </button>
