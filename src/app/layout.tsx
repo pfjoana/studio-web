@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Playfair_Display, Raleway } from 'next/font/google'
+import { Playfair_Display, Raleway, Marcellus} from 'next/font/google'
 import "./globals.css"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -18,6 +18,15 @@ const raleway = Raleway({
   variable: '--font-raleway',
 })
 
+const marcellus = Marcellus({
+  subsets: ["latin"],
+  weight: "400",
+  display: 'swap',
+  variable: "--font-marcellus",
+})
+
+
+
 export const metadata: Metadata = {
   title: "JoPF Art Studio",
   description: "Showcasing unique paintings and art services.",
@@ -29,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${raleway.variable} ${marcellus.variable}`}>
       <body className="font-sans text-charcoal bg-stone min-h-screen">
         <Navbar/>
         <main className="pt-20">

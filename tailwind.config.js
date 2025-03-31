@@ -13,7 +13,7 @@ module.exports = {
   			navy: '#1a2a42',
   			terracotta: '#c06d59',
   			gold: '#e6b980',
-  			stone: '#f5f5f0',
+  			stone: '#f5efe9;',
   			charcoal: '#2d2d2d',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -64,7 +64,9 @@ module.exports = {
   			sans: [
   				'Raleway',
   				'sans-serif'
-  			]
+  			],
+        marcellus: ["var(--font-marcellus)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
