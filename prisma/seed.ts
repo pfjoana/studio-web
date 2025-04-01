@@ -49,12 +49,12 @@ async function main() {
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158831/paintings/showcase_emotions.jpg',
-            publicId: 'paintings/showcase_emotions'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514123/paintings/Emotions1.jpg',
+            publicId: 'paintings/Emotions1'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158829/paintings/showcase_emotions2.jpg',
-            publicId: 'paintings/showcase_emotions2'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514122/paintings/Emotions2.jpg',
+            publicId: 'paintings/Emotions2'
           }
         ]
       }
@@ -81,13 +81,9 @@ async function main() {
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158832/paintings/showcase_divergencias.jpg',
-            publicId: 'paintings/showcase_divergencias'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514123/paintings/divergencias.jpg',
+            publicId: 'paintings/divergencias'
           },
-          {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743158831/paintings/showcase_divergencias2.jpg',
-            publicId: 'paintings/showcase_divergencias2'
-          }
         ]
       }
     }
@@ -114,8 +110,8 @@ async function main() {
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178615/paintings/showcase_redPlanet.jpg',
-            publicId: 'paintings/showcase_redPlanet'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/redplanet.jpg',
+            publicId: 'paintings/redplanet'
           }
         ]
       }
@@ -142,25 +138,31 @@ async function main() {
       images: {
         create: [
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178697/paintings/showcase_AlemEspelho.jpg',
-            publicId: 'paintings/showcase_AlemEspelho'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho1.jpg',
+            publicId: 'paintings/AlemEspelho1'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178689/paintings/detail_AlemEspelho.jpg',
-            publicId: 'paintings/detail_AlemEspelho'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho2.jpg',
+            publicId: 'paintings/AlemEspelho2'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho2.jpg',
-            publicId: 'paintings/detail_AlemEspelho2'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho3.jpg',
+            publicId: 'paintings/AlemEspelho3'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho3.jpg',
-            publicId: 'paintings/detail_AlemEspelho3'
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho4.jpg',
+            publicId: 'paintings/AlemEspelho4'
           },
           {
-            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743178691/paintings/detail_AlemEspelho4.jpg',
-            publicId: 'paintings/detail_AlemEspelho4'
-          }
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho5.jpg',
+            publicId: 'paintings/AlemEspelho5'
+          },
+          {
+            url: 'https://res.cloudinary.com/dctobclli/image/upload/v1743514124/paintings/AlemEspelho6.jpg',
+            publicId: 'paintings/AlemEspelho6'
+          },
+
+
 
         ]
       }

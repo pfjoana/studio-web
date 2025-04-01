@@ -22,6 +22,16 @@ body {
 
 
 @layer utilities {
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
 
   .heading {
     @apply text-4xl md:text-5xl font-marcellus text-navy mb-4
