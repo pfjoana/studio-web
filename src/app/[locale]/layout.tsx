@@ -1,8 +1,11 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Raleway, Marcellus} from 'next/font/google'
-import "./globals.css"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/src/i18n/routing';
+import "@/src/app/globals.css"
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
 import { Toaster } from "@/src/components/ui/toaster"
 
 // Load fonts
@@ -32,20 +35,29 @@ export const metadata: Metadata = {
   description: "Showcasing unique paintings and art services.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function LocaleLayout({    children,
+    params
+  }: {
+    children: React.ReactNode;
+    params: Promise<{locale: string}>;
+  }) {
+    // Ensure that the incoming `locale` is valid
+    const {locale} = await params;
+    if (!hasLocale(routing.locales, locale)) {
+      notFound();
+    }
+
   return (
-    <html lang="en" className={`${playfair.variable} ${raleway.variable} ${marcellus.variable}`}>
+    <html lang={locale} className={`${playfair.variable} ${raleway.variable} ${marcellus.variable}`}>
       <body className="font-sans text-charcoal bg-stone min-h-screen">
+      <NextIntlClientProvider>
         <Navbar/>
         <main className="pt-20">
           {children}
         </main>
         <Toaster />
         <Footer/>
+      </NextIntlClientProvider>
       </body>
     </html>
   );
