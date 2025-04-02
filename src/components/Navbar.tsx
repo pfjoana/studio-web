@@ -32,8 +32,8 @@ export default function Navbar() {
           {[
             // { name: 'Home', path: '/' },
             { name: 'Gallery', path: '/paintings' },
-            // { name: 'About', path: '/about' },
-            { name: 'Contact', path: '/contact' }
+            { name: 'About', path: '/about' },
+            { name: 'Contacts', path: '/contacts' }
           ].map((link) => (
             <li key={link.name}>
               <Link href={link.path}>
