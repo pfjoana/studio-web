@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
 
   const pathname = usePathname();
+  const t = useTranslations('navbar');
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,10 +32,9 @@ export default function Navbar() {
         <div className="font-marcellus text-2xl text-navy">JoPF Art Studio</div>
         <ul className="flex space-x-8">
           {[
-            // { name: 'Home', path: '/' },
-            { name: 'Gallery', path: '/paintings' },
-            { name: 'About', path: '/about' },
-            { name: 'Contacts', path: '/contacts' }
+            { name: t('gallery'), path: '/paintings' },
+            { name: t('about'), path: '/about' },
+            { name: t('contacts'), path: '/contacts' }
           ].map((link) => (
             <li key={link.name}>
               <Link href={link.path}>
@@ -50,9 +51,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      {/* <span className="text-sm pl-10 text-red-900">
-      This is a temporary but fully functional version of the site. Feel free to use the contact form and navigate without any issues!
-      </span> */}
     </nav>
   );
 }

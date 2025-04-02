@@ -1,19 +1,14 @@
 import { prisma } from '@/lib/client'
 import { notFound } from 'next/navigation'
-import PaintingDetail from '@/src/components/PaintingDetail'
+import PaintingPage from "@/src/components/PaintingPage"
 
-interface PaintingPageProps {
-  params: Promise<{
-    id: string
-  }>
-}
+export default async function PaintingPageWrapper({ params }: { params: { id: string } }) {
 
-export default async function PaintingPage(props: PaintingPageProps) {
-  const params = await props.params;
+  const resolvedParams = await params;
 
   const painting = await prisma.painting.findUnique({
     where: {
-      id: params.id,
+      id: resolvedParams.id,
     },
     include: {
       images: true,
@@ -26,7 +21,9 @@ export default async function PaintingPage(props: PaintingPageProps) {
     notFound()
   }
 
-  return <PaintingDetail painting={painting} />
+
+  return <PaintingPage painting={painting} />;
+
 }
 
 export async function generateStaticParams() {

@@ -1,30 +1,39 @@
-import { prisma } from '@/lib/client'
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import {useTranslations} from 'next-intl'
 
 
-export default async function PaintingsPage() {
+type Painting = {
+  id: string;
+  title: string;
+  size: string;
+  year: number;
+  colors: { id: string; name: string }[];
+  techniques: { id: string; name: string }[];
+  images: {
+    id: string;
+    publicId: string;
+    url: string;
+  }[]
+}
 
-  const paintings = await prisma.painting.findMany({
-    include: {
-      images: {
-        take: 1,
-      },
-      colors: true,
-      techniques: true,
-    },
-    orderBy: {
-      year: 'desc',
-    },
-  })
+type PaintingsGalleryProps = {
+  paintings: Painting[];
+}
+
+export default function PaintingsGallery({ paintings }: PaintingsGalleryProps) {
+
+  const tGallery = useTranslations("gallery");
 
 
   return (
     <div className="container mx-auto py-16 px-4">
       <div className="mb-12 text-center">
-        <h1 className="heading">Art Gallery</h1>
+        <h1 className="heading">{tGallery("heading")}</h1>
         <p className="text-charcoal max-w-2xl mx-auto">
-          Explore our curated collection of artworks in a variety of styles and techniques.
+        {tGallery("description")}
         </p>
       </div>
 
@@ -46,7 +55,7 @@ export default async function PaintingsPage() {
                 />
               ) : (
                 <div className="w-full h-full bg-stone flex items-center justify-center">
-                  <span className="text-gray-500">No image available</span>
+                  <span className="text-gray-500">{tGallery("noImage")}</span>
                 </div>
               )}
             </div>
@@ -73,11 +82,6 @@ export default async function PaintingsPage() {
                   ))}
                 </div>
 
-              {/* <div className="flex justify-end mt-3">
-                <div className="inline-block border-b border-gold pb-1 text-sm font-medium text-navy transition-colors group-hover:border-terracotta group-hover:text-terracotta ml-auto">
-                  View details
-                </div>
-              </div> */}
             </div>
           </Link>
         ))}
