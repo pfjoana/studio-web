@@ -34,7 +34,7 @@ const ContactPage = () => {
   }, [state, toast])
 
   return (
-    <div className="container mx-auto py-16 px-4">
+    <div className="container mx-auto max-w-7xl py-16 px-4">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
           <h1 className="heading text-center mb-10">Contacts</h1>
@@ -68,7 +68,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className="bg-stone/50 mt-8 ">
+        <div className="bg-stone mt-8 ">
           <Form
             action={formAction}
             className="space-y-6"

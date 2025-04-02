@@ -87,7 +87,7 @@ export default function PaintingDetail({ painting }: { painting: Painting }) {
             <p className="mb-8 text-stone">Feel free to inquire about a commissioned piece.</p>
 
             <Link
-              href="/contact"
+              href="/contacts"
               className="bg-terracotta text-white px-8 py-3 rounded-lg hover:bg-terracotta/90 transition-colors inline-block">
               Contact Gallery
             </Link>
