@@ -5,5 +5,23 @@ export const routing = defineRouting({
   locales: ['en', 'pt'],
 
   // Used when no locale matches
-  defaultLocale: 'en'
+  defaultLocale: 'en',
+  pathnames: {
+    "/paintings": {
+      "en": "/gallery",
+      "pt": "/galeria",
+    },
+    "/paintings/[id]" : {
+      "en": "/gallery/[id]",
+      "pt": "/galeria/[id]",
+    },
+    "about": {
+      "en": "/about",
+      "pt": "/sobre",
+    },
+    "/contacts": {
+      "en": "/contacts",
+      "pt": "/conctatos",
+    },
+  },
 });
