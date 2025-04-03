@@ -13,7 +13,7 @@ export default function AboutPage() {
     <div className="w-full max-w-6xl">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <div className="md:w-1/2">
-          <h1 className="heading text-center pb-4">Discover the Artist Journey</h1>
+          <h1 className="heading text-center pb-4">{tAbout("heading")}</h1>
           <div className="text-charcoal leading-relaxed max-w-2xl text-base mt-4">
             <p className='mb-4'>{tAbout("text1")}</p>
 
