@@ -1,51 +1,47 @@
 {
-  "common": {
-    "submit": "Submit",
-    "cancel": "Cancel"
-  },
   "navbar": {
-    "home": "Home",
-    "gallery": "Gallery",
-    "about": "About",
-    "contacts": "Contacts"
+    "home": "Início",
+    "gallery": "Galeria",
+    "about": "Sobre",
+    "contacts": "Contactos"
   },
-  "gallery":{
-    "heading": "Art Gallery",
-    "description": "Explore our curated collection of artworks in a variety of styles and techniques.",
-    "noImage": "No image available"
+  "gallery": {
+    "heading": "Galeria de Arte",
+    "description": "Cada pintura tem uma história, explore a minha coleção e encontre a que mais lhe inspira.",
+    "noImage": "Nenhuma imagem disponível"
   },
   "painting": {
-    "heading": "Painting information",
-    "title": "Title:",
-    "year": "Year:",
-    "size": "Size:",
-    "techniques": "Techniques:",
-    "colors": "Colors:",
-    "contact": "Contact the artist"
+    "heading": "Informações da Obra",
+    "title": "Título:",
+    "year": "Ano:",
+    "size": "Dimensões:",
+    "techniques": "Técnicas:",
+    "colors": "Cores:",
+    "contact": "Contactar a artista"
   },
   "inquiries": {
-    "first": "Interested in this artwork?",
-    "firstText": "Contact us for availability, pricing, or to schedule a viewing.",
-    "second": "Prefer a piece tailored to your vision?",
-    "secondText": "Feel free to inquire about a commissioned piece."
+    "first": "Interessado nesta obra?",
+    "firstText": "Entre em contacto para saber mais sobre disponibilidade, preços ou para agendar uma visita.",
+    "second": "Prefere uma peça personalizada ao seu gosto?",
+    "secondText": "Sinta-se à vontade para perguntar mais Informações sobre encomendas personalizadas."
   },
   "about": {
-    "heading": "Discover the Artist Journey",
-    "text1": "JoPF - Joana Pais de Faria is a multidisciplinary artist with a unique journey shaped by her background in scientific research. Her PhD studies gave her an analytical and detail-oriented mindset, which now subtly assists her artistic practice.",
-    "text2": "During periods of intense academic work, she discovered a profound connection to her creativity through watercolors. The soothing process of working with water and pigment became a pivotal moment in her life, inspiring her to fully embrace her creative calling in recent years.",
-    "text3": "Through her art, Joana seeks to channel the tranquility and balance she experiences while creating, using textures, colors, and abstract forms to evoke similar feelings of calm and serenity in her audience.",
-    "text4": "Joana's journey is not only a personal exploration, it also serves as a universal invitation to embrace the beauty of stillness and creativity in the midst of our often hectic lives. I hope you enjoy exploring my artistic journey!",
-    "contact": "Want to get in touch? Contact me here"
+    "heading": "Conheça a Artista",
+    "text1": "JoPF - Joana Pais de Faria é uma artista multidisciplinar com um percurso único, moldado pela sua formação e background em investigação científica. O seu doutoramento deu-lhe uma mentalidade analítica e focada no detalhe, algo que agora influencia subtilmente a sua prática artística.",
+    "text2": "Durante períodos de intenso trabalho académico, descobriu uma profunda ligação com a criatividade através da aguarela. O processo relaxante de trabalhar com água e pigmento tornou-se um momento crucial na sua vida, inspirando-a a explorar novas técnicas e abraçar o seu percurso artístico.",
+    "text3": "Através da sua arte, a artista procura canalizar a serenidade e o equilíbrio que sente ao criar, ao mesmo tempo em que dá espaço à expressão emocional livre. Para tal recorre sobretudo ao estilo abstracto, por vezes enriquecido com uma vertente tridimensional, oferecendo ao público uma experiência táctil única.",
+    "text4": "O seu percurso não é apenas uma exploração pessoal, mas também um convite universal para abraçar a beleza da quietude e da criatividade no meio da vida agitada.",
+    "contact": "Quer entrar em contacto? Pode fazê-lo aqui"
   },
   "contacts": {
-    "heading": "Contacts",
-    "text1": "For questions about artworks featured in the gallery or to discuss personalized commissions, feel free to send a message. Your vision and curiosity are always welcome.",
-    "text2": "You can use the contact form, send an email, or reach out via Instagram.",
-    "email": "jopfstudio@gmail.com",
-    "instagram": "jopf_art",
-    "namelabel": "Name",
+    "heading": "Contactos",
+    "text1": "Se tiver questões sobre as obras apresentadas na galeria ou quiser discutir encomendas personalizadas, não hesite em enviar uma mensagem. A sua visão e curiosidade são sempre bem-vindas.",
+    "text2": "Pode utilizar o formulário de contacto, enviar um email ou falar comigo via Instagram.",
+    "email": "",
+    "instagram": "",
+    "namelabel": "Nome",
     "emailLabel": "Email",
-    "messagelabel": "Message",
-    "buttonsend": "Send Message"
+    "messagelabel": "Mensagem",
+    "buttonsend": "Enviar Mensagem"
   }
 }

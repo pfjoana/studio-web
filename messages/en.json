@@ -11,7 +11,7 @@
   },
   "gallery":{
     "heading": "Art Gallery",
-    "description": "Explore our curated collection of artworks in a variety of styles and techniques.",
+    "description": "Every painting tells a story, explore my collection and discover the one that speaks to you.",
     "noImage": "No image available"
   },
   "painting": {
@@ -30,11 +30,11 @@
     "secondText": "Feel free to inquire about a commissioned piece."
   },
   "about": {
-    "heading": "Discover the Artist Journey",
+    "heading": "Meet the Artist",
     "text1": "JoPF - Joana Pais de Faria is a multidisciplinary artist with a unique journey shaped by her background in scientific research. Her PhD studies gave her an analytical and detail-oriented mindset, which now subtly assists her artistic practice.",
-    "text2": "During periods of intense academic work, she discovered a profound connection to her creativity through watercolors. The soothing process of working with water and pigment became a pivotal moment in her life, inspiring her to fully embrace her creative calling in recent years.",
-    "text3": "Through her art, Joana seeks to channel the tranquility and balance she experiences while creating, using textures, colors, and abstract forms to evoke similar feelings of calm and serenity in her audience.",
-    "text4": "Joana's journey is not only a personal exploration, it also serves as a universal invitation to embrace the beauty of stillness and creativity in the midst of our often hectic lives. I hope you enjoy exploring my artistic journey!",
+    "text2": "During periods of intense academic work, she discovered a profound connection to her creativity through watercolors. The soothing process of working with water and pigment became a pivotal moment in her life, inspiring her to explore new media and fully embrace her creative calling.",
+    "text3": "Through her art, Joana seeks to channel the serenity and balance she experiences while creating, while also allowing space for free emotional expression. To achieve this, she primarily turns to the abstract style, sometimes including a three-dimensional richness and offering the audience a unique tactile experience.",
+    "text4": "The artist's journey is not only a personal exploration, it also serves as a universal invitation to embrace the beauty of stillness and creativity in the midst of our often hectic lives.",
     "contact": "Want to get in touch? Contact me here"
   },
   "contacts": {
