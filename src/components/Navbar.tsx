@@ -14,12 +14,8 @@ export default function Navbar() {
   const currentLocale = pathname.split('/')[1];
 
   const getNormalizedPathname = (pathname: string) => {
-    console.log('Original Pathname:', pathname);
     const segments = pathname.split('/');
-    console.log('Pathname Segments:', segments);
     const normalizedPathname = '/' + segments.slice(2).join('/');
-
-    console.log('Normalized Pathname:', normalizedPathname);
     return normalizedPathname;
   };
 

@@ -1,7 +1,7 @@
 {
-  "common": {
-    "submit": "Submit",
-    "cancel": "Cancel"
+  "available": {
+    "available": "Available",
+    "sold": "Sold"
   },
   "navbar": {
     "home": "Home",
@@ -19,9 +19,14 @@
     "title": "Title:",
     "year": "Year:",
     "size": "Size:",
+    "availability": "Availability:",
     "techniques": "Techniques:",
     "colors": "Colors:",
-    "contact": "Contact the artist"
+    "contact": "Contact the artist",
+    "Acrylic on canvas": "Acrylic on canvas",
+    "Mixed Media on woodboard": "Mixed Media on woodboard",
+    "Mixed Media on canvas": "Mixed Media on canvas",
+    "Watercolor": "Watercolor"
   },
   "inquiries": {
     "first": "Interested in this artwork?",

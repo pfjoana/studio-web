@@ -34,6 +34,7 @@ async function main() {
       description: '',
       size: '60 x 80 cm',
       year: 2023,
+      available: true,
       colors: {
         connect: [
           { id: colors[4].id },
@@ -67,6 +68,7 @@ async function main() {
       description: '',
       size: '30 x 40 cm',
       year: 2022,
+      available: true,
       colors: {
         connect: [
           { id: colors[1].id },
@@ -95,6 +97,7 @@ async function main() {
       description: '',
       size: '100 cm diameter',
       year: 2024,
+      available: true,
       colors: {
         connect: [
           { id: colors[7].id },
@@ -124,6 +127,7 @@ async function main() {
       description: '',
       size: '62 x 84 cm',
       year: 2024,
+      available: true,
       colors: {
         connect: [
           { id: colors[1].id },

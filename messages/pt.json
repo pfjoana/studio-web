@@ -1,4 +1,8 @@
 {
+  "available": {
+    "available": "Disponível",
+    "sold": "Vendido"
+  },
   "navbar": {
     "home": "Início",
     "gallery": "Galeria",
@@ -15,9 +19,14 @@
     "title": "Título:",
     "year": "Ano:",
     "size": "Dimensões:",
+    "availability": "Disponibilidade:",
     "techniques": "Técnicas:",
     "colors": "Cores:",
-    "contact": "Contactar a artista"
+    "contact": "Contactar a artista",
+    "Acrylic on canvas": "Acrílico sobre tela",
+    "Mixed Media on woodboard": "Técnicas mistas sobre madeira",
+    "Mixed Media on canvas": "Técnicas mistas sobre tela",
+    "Watercolor": "Aguarela"
   },
   "inquiries": {
     "first": "Interessado nesta obra?",
@@ -37,8 +46,8 @@
     "heading": "Contactos",
     "text1": "Se tiver questões sobre as obras apresentadas na galeria ou quiser discutir encomendas personalizadas, não hesite em enviar uma mensagem. A sua visão e curiosidade são sempre bem-vindas.",
     "text2": "Pode utilizar o formulário de contacto, enviar um email ou falar comigo via Instagram.",
-    "email": "",
-    "instagram": "",
+    "email": "jopfstudio@gmail.com",
+    "instagram": "jopf_art",
     "namelabel": "Nome",
     "emailLabel": "Email",
     "messagelabel": "Mensagem",

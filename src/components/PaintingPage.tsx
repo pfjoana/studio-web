@@ -10,6 +10,7 @@ type PaintingPageProps = {
     title: string;
     size: string;
     year: number;
+    available: boolean;
     colors: { id: string; name: string }[];
     techniques: { id: string; name: string }[];
     images: {
@@ -20,12 +21,11 @@ type PaintingPageProps = {
   }
 }
 
-
 export default function PaintingPage({ painting }: {painting: PaintingPageProps['painting']}) {
 
   const tPaintings = useTranslations("painting");
   const tinquiries = useTranslations("inquiries");
-
+  const tAvailable = useTranslations("available");
 
 return   (
     <div className="container mx-auto max-w-7xl px-4">
@@ -53,25 +53,18 @@ return   (
           </div>
 
           <div className="mb-4 flex gap-2">
-            <h3 className="painting-details">{tPaintings("colors")}</h3>
-              <div className="flex flex-wrap">
-                {painting.colors.map((color: any) => (
-                  <span key={color.id} className="text-sm text-charcoal bg-white px-2 mx-1 py-1 rounded">
-                    {color.name}
-                  </span>
-                ))}
-              </div>
+            <h3 className="painting-details">{tPaintings("techniques")}</h3>
+              {painting.techniques.map((technique: any) => (
+                <p key={technique.id} className="text-charcoal mr-1">
+                  {tPaintings(technique.name)}
+                </p>
+              ))}
           </div>
 
-          <div className="flex gap-2">
-            <h3 className="painting-details">{tPaintings("techniques")}</h3>
-              <div className="flex flex-wrap gap-1 mt-1">
-                {painting.techniques.map((technique: any) => (
-                  <span key={technique.id} className="text-sm text-charcoal bg-white px-2 mx-1 rounded">
-                    {technique.name}
-                  </span>
-                ))}
-              </div>
+          <div className="mb-4 flex gap-2 ">
+            <p className={`${painting.available ? 'text-terracotta border-b border-terracotta font-medium' : 'text-charcoal'}`}>
+              {painting.available ? tAvailable("available") : tAvailable("sold")}
+            </p>
           </div>
 
           <div className="mt-10 bg-navy p-8 rounded-lg text-white max-w-m">
@@ -83,7 +76,7 @@ return   (
             <Link
               href="/contacts"
               className=" bg-terracotta text-white px-8 py-3 rounded-lg hover:bg-terracotta/90 transition-colors inline-block">
-              Contact Gallery
+              {tPaintings("contact")}
             </Link>
           </div>
         </div>

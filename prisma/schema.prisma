@@ -18,6 +18,7 @@ model Painting {
   colors     Color[]
   techniques Technique[]
   images     Image[]
+  available  Boolean   @default(true)
 }
 
 model Image {

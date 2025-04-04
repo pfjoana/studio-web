@@ -21,15 +21,12 @@ const ContactPage = () => {
         title: "Success",
         description: state.message,
         variant: "default",
-        className: "toast-success"
       });
     } else if (state?.error) {
       toast({
         title: "Error",
         description: state.error,
         variant: "destructive",
-        className: "toast-error"
-
       });
     }
   }, [state, toast])
