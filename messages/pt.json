@@ -51,6 +51,7 @@
     "namelabel": "Nome",
     "emailLabel": "Email",
     "messagelabel": "Mensagem",
-    "buttonsend": "Enviar Mensagem"
+    "buttonsend": "Enviar Mensagem",
+    "sending": "A enviar..."
   }
 }

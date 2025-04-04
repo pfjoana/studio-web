@@ -51,6 +51,7 @@
     "namelabel": "Name",
     "emailLabel": "Email",
     "messagelabel": "Message",
-    "buttonsend": "Send Message"
+    "buttonsend": "Send Message",
+    "sending": "Sending..."
   }
 }
