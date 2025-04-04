@@ -7,12 +7,14 @@ import Form from 'next/form';
 import Link from 'next/link';
 import { Mail, Instagram } from 'lucide-react';
 import {useTranslations} from 'next-intl'
+import FormButton from '@/src/components/FormButton';
 
 
 
 const ContactPage = () => {
 
   const { toast } = useToast();
+  // @ts-expect-error
   const [state, formAction] = useActionState (submitContactForm, {});
 
   useEffect(() => {
@@ -21,15 +23,12 @@ const ContactPage = () => {
         title: "Success",
         description: state.message,
         variant: "default",
-        className: "toast-success"
       });
     } else if (state?.error) {
       toast({
         title: "Error",
         description: state.error,
         variant: "destructive",
-        className: "toast-error"
-
       });
     }
   }, [state, toast])
@@ -109,12 +108,7 @@ const ContactPage = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="form-button"
-            >
-              {tContacts("buttonsend")}
-            </button>
+            <FormButton />
           </Form>
         </div>
       </div>

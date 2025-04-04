@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/client'
 import { notFound } from 'next/navigation'
-import PaintingPage from "@/src/components/PaintingPage"
+import Link from 'next/link'
+import SwiperGallery from '@/src/components/SwiperGallery'
+import {getTranslations} from 'next-intl/server';
 
 export default async function PaintingPageWrapper({ params }: { params: { id: string } }) {
 
@@ -21,9 +23,66 @@ export default async function PaintingPageWrapper({ params }: { params: { id: st
     notFound()
   }
 
+  const tPaintings = await getTranslations("painting");
+  const tinquiries = await getTranslations("inquiries");
+  const tAvailable = await getTranslations("available");
 
-  return <PaintingPage painting={painting} />;
+  return (
+    <div className="container mx-auto max-w-7xl px-4">
+      <div className="grid grid-cols-1 mx-auto md:grid-cols-12 gap-x-20 my-10">
 
+        <div className="md:col-span-6">
+          <SwiperGallery images={painting.images} />
+        </div>
+
+        <div className="md:col-span-5">
+          <h1 className='font-marcellus text-4xl mb-10 text-center'>{tPaintings("heading")}</h1>
+          <div className="mb-4 flex gap-2">
+            <h3 className="painting-details">{tPaintings("title")}</h3>
+            <p className="text-charcoal">{painting.title}</p>
+          </div>
+
+          <div className="mb-4 flex gap-2">
+            <h3 className="painting-details">{tPaintings("size")}</h3>
+            <p className="text-charcoal">{painting.size}</p>
+          </div>
+
+          <div className="mb-4 flex gap-2">
+            <h3 className="painting-details">{tPaintings("year")}</h3>
+            <p className="text-charcoal">{painting.year}</p>
+          </div>
+
+          <div className="mb-4 flex gap-2">
+            <h3 className="painting-details">{tPaintings("techniques")}</h3>
+              {painting.techniques.map((technique: any) => (
+                <p key={technique.id} className="text-charcoal mr-1">
+                  {tPaintings(technique.name)}
+                </p>
+              ))}
+          </div>
+
+          <div className="mb-4 flex gap-2 ">
+            <p className={`${painting.available ? 'text-terracotta border-b border-terracotta font-medium' : 'text-charcoal'}`}>
+              {painting.available ? tAvailable("available") : tAvailable("sold")}
+            </p>
+          </div>
+
+          <div className="mt-10 bg-navy p-8 rounded-lg text-white max-w-m">
+            <h2 className="text-xl font-serif font-semibold mb-3 italic">{tinquiries("first")}</h2>
+            <p className="mb-6 text-stone">{tinquiries("firstText")}</p>
+            <h2 className="text-xl font-serif font-semibold mb-3 italic">{tinquiries("second")}</h2>
+            <p className="mb-8 text-stone">{tinquiries("secondText")}</p>
+
+            <Link
+              href="/contacts"
+              className=" bg-terracotta text-white px-8 py-3 rounded-lg hover:bg-terracotta/90 transition-colors inline-block">
+              {tPaintings("contact")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export async function generateStaticParams() {

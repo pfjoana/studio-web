@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import { FreeMode, Navigation, Thumbs, Pagination, Zoom } from 'swiper/modules'
 
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
@@ -64,6 +63,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
       </Swiper>
 
       {/* Thumbnails */}
+      {images.length > 1 && (
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
@@ -89,6 +89,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
           </SwiperSlide>
         ))}
       </Swiper>
+      )}
     </div>
   )
 }
