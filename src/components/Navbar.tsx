@@ -2,15 +2,17 @@
 
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/src/components/ui/sheet'
 import { Menu } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import LocaleSwitcher from "./LocaleSwitcher";
+import { Link, usePathname } from '@/src/i18n/routing';
 
 export default function Navbar() {
 
   const t = useTranslations('navbar');
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  console.log(pathname)
 
   const navLinks = [
     { name: t('gallery'), path: '/paintings' },
@@ -18,9 +20,20 @@ export default function Navbar() {
     { name: t('contacts'), path: '/contacts' }
   ]
 
-    const handleLinkClick = () => {
-      setIsOpen(false);
-    };
+  const isActive = (path: string) => {
+    const currentPath = pathname;
+
+    // // Special case for homepage
+    // if (path === '/' && (currentPath === '/' || currentPath === '')) {
+    //   return true;
+    // }
+
+    return currentPath === path;
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className={'fixed top-0 w-full z-50 bg-white shadow-md py-4'}>
@@ -30,8 +43,9 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.path}>
-                <span className="text-xl font-marcellus font-medium cursor-pointer transition-colors duration-200">
+              <Link href={{pathname: link.path as "/paintings" | "/about" | "/contacts" }}>
+              <span className={`text-xl font-marcellus font-medium cursor-pointer transition-colors duration-200
+                  ${isActive(link.path) ? 'text-navy border-b-2 border-terracotta pb-1' : 'hover:text-terracotta'}`}>
                   {link.name}
                 </span>
               </Link>
@@ -52,8 +66,13 @@ export default function Navbar() {
             <SheetContent side="right" className="flex flex-col gap-6 pt-12">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.path} onClick={handleLinkClick}>
-                  <span className="text-xl font-marcellus block">{link.name}</span>
+                <Link key={link.name}
+                  href={{pathname: link.path as "/paintings" | "/about" | "/contacts" }}
+                  onClick={handleLinkClick}>
+                  <span className={`text-xl font-marcellus block
+                    ${isActive(link.path) ? 'text-navy font-semibold border-l-4 border-navy pl-2' : ''}`}>
+                    {link.name}
+                  </span>
                 </Link>
               ))}
               <LocaleSwitcher />
