@@ -37,7 +37,7 @@ export default function Navbar() {
             { name: t('contacts'), path: '/contacts' }
           ].map((link) => (
             <li key={link.name}>
-              <Link href={getLocalizedPath(link.path)}>
+              <Link href={link.path}>
                 <span className={`text-xl font-marcellus font-medium cursor-pointer transition-colors duration-200 ${
                     getNormalizedPathname(pathname) === getLocalizedPath(link.path)
                       ? 'text-[#c06d59] border-b-2 border-gold pb-1'
