@@ -5,7 +5,6 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/src/i18n/routing';
 import "@/src/app/globals.css"
 import Navbar from "../../components/Navbar"
-import Footer from "../../components/Footer"
 import { Toaster } from "@/src/components/ui/toaster"
 
 // Load fonts
@@ -56,7 +55,6 @@ export default async function LocaleLayout({    children,
           {children}
         </main>
         <Toaster />
-        <Footer/>
       </NextIntlClientProvider>
       </body>
     </html>
