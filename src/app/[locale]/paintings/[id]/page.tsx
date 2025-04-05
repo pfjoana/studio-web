@@ -4,7 +4,7 @@ import Link from 'next/link'
 import SwiperGallery from '@/src/components/SwiperGallery'
 import {getTranslations} from 'next-intl/server';
 
-export default async function PaintingPageWrapper({ params }: { params: { id: string } }) {
+export default async function PaintingDetails({ params }: { params: Promise<{ id: string }>}) {
 
   const resolvedParams = await params;
 
