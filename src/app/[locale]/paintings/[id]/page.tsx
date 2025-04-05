@@ -4,13 +4,19 @@ import Link from 'next/link'
 import SwiperGallery from '@/src/components/SwiperGallery'
 import {getTranslations} from 'next-intl/server';
 
-export default async function PaintingDetails({ params }: { params: Promise<{ id: string }>}) {
+export type paramsType = Promise<{id: string}>
 
-  const resolvedParams = await params;
+type Props = {
+  params: paramsType
+}
+
+export default async function PaintingDetails({ params }: Props) {
+
+  const {id} = await params;
 
   const painting = await prisma.painting.findUnique({
     where: {
-      id: resolvedParams.id,
+      id: id,
     },
     include: {
       images: true,
@@ -88,9 +94,14 @@ export default async function PaintingDetails({ params }: { params: Promise<{ id
 export async function generateStaticParams() {
   const paintings = await prisma.painting.findMany({
     select: { id: true },
-  })
+  });
 
-  return paintings.map((painting) => ({
-    id: painting.id,
-  }))
+  const locales = ['en', 'pt'];
+
+  return locales.flatMap((locale) =>
+    paintings.map((painting) => ({
+      locale,
+      id: painting.id,
+    }))
+  );
 }
