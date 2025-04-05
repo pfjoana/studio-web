@@ -37,7 +37,8 @@ body {
   }
 
   .form-button {
-    @apply w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium
+    @apply w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium sm:text-base;
+    word-wrap: break-word;
   }
 
   .painting-details {
