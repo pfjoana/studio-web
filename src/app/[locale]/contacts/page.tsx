@@ -36,17 +36,17 @@ const ContactPage = () => {
   const tContacts = useTranslations("contacts");
 
   return (
-    <div className="container mx-auto max-w-7xl py-16 px-4">
+    <div className="container mx-auto max-w-7xl py-12 px-4">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
           <h1 className="heading text-center mb-10">{tContacts("heading")}</h1>
-          <p className="text-charcoal text-base leading-relaxed max-w-2xl mr-4 ml-10">
+          <p className="text-charcoal text-base leading-relaxed w-full max-w-2xl ">
           {tContacts("text1")}
           <br />
           {tContacts("text2")}
           </p>
 
-          <div className="flex space-x-6 items-center ml-10">
+          <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 items-start md:ml-10">
             <Link
               href="mailto:jopfstudio@gmail.com"
               className="contacts-link"

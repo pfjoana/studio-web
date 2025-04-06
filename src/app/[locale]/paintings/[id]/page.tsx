@@ -35,14 +35,19 @@ export default async function PaintingDetails({ params }: Props) {
 
   return (
     <div className="container mx-auto max-w-7xl px-4">
+        {/* Heading on mobile only */}
+        <h1 className="font-marcellus text-3xl mb-6 text-center md:hidden">
+          {tPaintings("heading")}
+        </h1>
       <div className="grid grid-cols-1 mx-auto md:grid-cols-12 gap-x-20 my-10">
-
-        <div className="md:col-span-6">
+        <div className="md:col-span-6 ">
           <SwiperGallery images={painting.images} />
         </div>
 
         <div className="md:col-span-5">
-          <h1 className='font-marcellus text-4xl mb-10 text-center'>{tPaintings("heading")}</h1>
+          <h1 className='font-marcellus text-4xl mb-6 text-center hidden md:flex'>
+            {tPaintings("heading")}
+          </h1>
           <div className="mb-4 flex gap-2">
             <h3 className="painting-details">{tPaintings("title")}</h3>
             <p className="text-charcoal">{painting.title}</p>

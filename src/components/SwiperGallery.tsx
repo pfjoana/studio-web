@@ -31,8 +31,8 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
       {/* Main slider */}
       <Swiper
         style={{
-          '--swiper-navigation-color': '#000',
-          '--swiper-pagination-color': '#000'
+          '--swiper-navigation-color': '#333',
+          '--swiper-pagination-color': '#333'
         } as React.CSSProperties}
         pagination={true}
         loop={true}
@@ -44,7 +44,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
         }}
         modules={[FreeMode, Navigation, Thumbs, Pagination, Zoom]}
-        className="h-[500px] mx-6 mb-5"
+        className="aspect-video md:h-[500px] w-full md:mb-4 mb-6"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -64,31 +64,44 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
 
       {/* Thumbnails */}
       {images.length > 1 && (
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        loop={true}
-        initialSlide={0}
-        spaceBetween={10}
-        slidesPerView={6}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper thumbs h-32 mt-3 w-full"
-      >
-        {images.map((image, index) => (
-          <SwiperSlide key={index} className="cursor-pointer ">
-            <div className="w-24 h-24 flex items-center justify-center bg-stone">
-              <Image
-                width={1200}
-                height={900}
-                src={image.url}
-                alt={`Thumbnail ${index + 1}`}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="hidden md:block">
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          initialSlide={0}
+          spaceBetween={10}
+          slidesPerView={2.5}
+          freeMode={true}
+          watchSlidesProgress={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 4,
+            },
+            768: {
+              slidesPerView: 5,
+            },
+            1024: {
+              slidesPerView: 6,
+            }
+          }}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper thumbs h-32 mt-3 w-full"
+        >
+          {images.map((image, index) => (
+            <SwiperSlide key={index} className="cursor-pointer ">
+              <div className="w-24 h-24 flex items-center justify-center bg-stone">
+                <Image
+                  width={1200}
+                  height={900}
+                  src={image.url}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       )}
     </div>
   )
