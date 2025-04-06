@@ -35,7 +35,7 @@ export default function AboutPage() {
               <p className='mb-4'>{tAbout("text3")}</p>
               <p>{tAbout("text4")}</p>
               <div className="mt-10 text-center">
-                <Link href="/contacts" className="form-button px-4">
+                <Link href="/contacts" className="form-button">
                 {tAbout("contact")}</Link>
               </div>
             </div>

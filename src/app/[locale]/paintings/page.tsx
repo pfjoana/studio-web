@@ -27,7 +27,7 @@ export default async function PaintingsPage() {
   const tPainting = await getTranslations("painting");
 
   return (
-    <div className="container mx-auto py-16 px-4">
+    <div className="container mx-auto py-12 px-4">
       <div className="mb-12 text-center">
         <h1 className="heading">{tGallery("heading")}</h1>
         <p className="text-charcoal max-w-2xl mx-auto">

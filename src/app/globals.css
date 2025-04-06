@@ -37,8 +37,13 @@ body {
   }
 
   .form-button {
-    @apply w-full bg-terracotta text-white py-3 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium sm:text-base;
+    @apply w-full bg-terracotta text-white py-3 px-4 rounded-md hover:bg-terracotta/90 transition-colors duration-300 font-medium;
     word-wrap: break-word;
+  }
+  @media (max-width: 640px) {
+    .form-button {
+      font-size: 0.9rem;
+    }
   }
 
   .painting-details {
