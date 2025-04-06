@@ -27,7 +27,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType  | null>(null);
 
   return (
-    <div className="bg-stone">
+    <div className="w-full">
       {/* Main slider */}
       <Swiper
         style={{
@@ -44,7 +44,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
         }}
         modules={[FreeMode, Navigation, Thumbs, Pagination, Zoom]}
-        className="aspect-video md:h-[500px] w-full md:mb-4 mb-6"
+        className="w-full mb-4 aspect-square sm:aspect-[4/3] md:aspect-auto md:h-[500px]"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
