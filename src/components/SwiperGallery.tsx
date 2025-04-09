@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import { FreeMode, Navigation, Thumbs, Pagination, Zoom } from 'swiper/modules'
+import { getCloudinaryUrl } from '@/lib/cloudinary';
+
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
@@ -50,12 +52,13 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
           <SwiperSlide key={index}>
             <div className="flex h-full w-full items-center justify-center swiper-zoom-container">
               <Image
+              unoptimized
                 width={1200}
                 height={900}
-                src={image.url}
+                src={getCloudinaryUrl(image.url, 'w_1200,q_auto,f_auto')}
                 alt={`Painting view ${index + 1}`}
                 className="max-h-full max-w-full object-contain"
-                sizes="(max-width: 768px) 100vw, 1200px"
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>
@@ -93,7 +96,7 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
                 <Image
                   width={1200}
                   height={900}
-                  src={image.url}
+                  src={getCloudinaryUrl(image.url, 'w_300,q_auto,f_auto')}
                   alt={`Thumbnail ${index + 1}`}
                   className="object-cover w-full h-full"
                 />
