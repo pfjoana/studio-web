@@ -52,10 +52,10 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
           <SwiperSlide key={index}>
             <div className="flex h-full w-full items-center justify-center swiper-zoom-container">
               <Image
-              unoptimized
                 width={1200}
                 height={900}
-                src={getCloudinaryUrl(image.url, 'w_1200,q_auto,f_auto')}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                src={getCloudinaryUrl(image.url)}
                 alt={`Painting view ${index + 1}`}
                 className="max-h-full max-w-full object-contain"
                 priority={index === 0}
@@ -94,9 +94,9 @@ export default function SwiperGallery({ images }: SwiperGalleryProps) {
             <SwiperSlide key={index} className="cursor-pointer ">
               <div className="w-24 h-24 flex items-center justify-center bg-stone">
                 <Image
-                  width={1200}
-                  height={900}
-                  src={getCloudinaryUrl(image.url, 'w_300,q_auto,f_auto')}
+                  width={300}
+                  height={200}
+                  src={getCloudinaryUrl(image.url)}
                   alt={`Thumbnail ${index + 1}`}
                   className="object-cover w-full h-full"
                 />
