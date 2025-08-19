@@ -32,6 +32,7 @@ const marcellus = Marcellus({
 export const metadata: Metadata = {
   title: "JoPF Art Studio",
   description: "Showcasing unique paintings and art services.",
+  icons: `/favicon.ico`,
 };
 
 export default async function LocaleLayout({    children,
