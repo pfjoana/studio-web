@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import LocaleSwitcher from "./LocaleSwitcher";
 import { Link, usePathname } from '@/src/i18n/routing';
+import Image from 'next/image';
 
 export default function Navbar() {
 
@@ -38,7 +39,21 @@ export default function Navbar() {
   return (
     <nav className={'fixed top-0 w-full z-50 bg-white shadow-md py-4'}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="font-marcellus text-2xl text-navy">JoPF Art Studio</div>
+
+      <Link href={{ pathname: "/paintings" }} className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+      <div className="font-marcellus text-2xl text-black">Art Studio by</div>
+        <Image
+          src="/logo.png"
+          alt="JoPF Art Studio Logo"
+          width={60}
+          height={60}
+          className="object-contain"
+        />
+      </Link>
+
+
+
+        {/* <div className="font-marcellus text-2xl text-navy">JoPF Art Studio</div> */}
 
         <ul className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
