@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,35 +7,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Painting {
-  id         String      @id @default(cuid())
-  title      String
+  id          String      @id @default(cuid())
+  title       String
   description String?
-  size       String
-  year       Int
-  colors     Color[]
-  techniques Technique[]
-  images     Image[]
-  available  Boolean   @default(true)
+  size        String
+  year        Int
+  available   Boolean     @default(true)
+  images      Image[]
+  colors      Color[]     @relation("ColorToPainting")
+  techniques  Technique[] @relation("PaintingToTechnique")
 }
 
 model Image {
   id         String   @id @default(cuid())
   url        String
-  publicId   String
   paintingId String
+  publicId   String
   painting   Painting @relation(fields: [paintingId], references: [id], onDelete: Cascade)
 }
 
 model Color {
   id        String     @id @default(cuid())
   name      String     @unique
-  paintings Painting[]
+  paintings Painting[] @relation("ColorToPainting")
 }
 
 model Technique {
   id        String     @id @default(cuid())
   name      String     @unique
-  paintings Painting[]
+  paintings Painting[] @relation("PaintingToTechnique")
 }
