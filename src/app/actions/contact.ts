@@ -17,6 +17,13 @@ export const submitContactForm = async (_state: any, formData: FormData) => {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const message = formData.get('message') as string;
+  const company = formData.get('company') as string; // honeypot anti-spam
+
+  //honeypot anti-spam
+  if (company) {
+    console.log('Bot detected via honeypot, ignoring submission');
+    return { success: true, message: 'Message sent successfully!' };
+  }
 
   if (!name || !email || !message) {
     return { error: 'All fields are required' };

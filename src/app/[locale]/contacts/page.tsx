@@ -108,6 +108,18 @@ const ContactPage = () => {
               />
             </div>
 
+            {/* Honeypot anti-spam - invisível para humanos, bots preenchem */}
+            <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true">
+              <label htmlFor="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <FormButton />
           </Form>
         </div>
